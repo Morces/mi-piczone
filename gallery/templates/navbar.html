@@ -1,29 +1,52 @@
 <!-- Navbar Start -->
 <div class="container-fluid nav-bar p-0">
-    <div class="container-lg p-0">
-        <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+    <div class="contain-lg p-0">
+        <nav class="navbar navbar-expand-lg bg-secondary navbar-light">
             <a href="index.html" class="navbar-brand">
-                <h1 class="m-0 text-white display-4"><span class="text-primary">D</span>ot<span class="text-primary">C</span>om</h1>
+                <img src="{static, 'img/logo.png'}" alt="">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                    <a href="#" class="nav-item nav-link">HOME</a>
+                    <a href="" class="nav-item nav-link">GALLERY</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          CATEGORIES
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Food</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Fashion</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Nature</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Travel</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Cars</a>
+                        </div>
+                      </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          LOCATIONS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">USA</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">U.K</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Africa</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="" class="nav-item nav-link">CONTACT</a>
                 </div>
             </div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </nav>
     </div>
 </div>
