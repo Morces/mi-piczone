@@ -1,0 +1,16 @@
+* {
+    font-family: 'Raleway' sans-serif;
+}
+body{
+    scroll-behavior: smooth;
+    background-image: url(/static/img/bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.overlay {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(49, 83, 15, 0.3);
+}
