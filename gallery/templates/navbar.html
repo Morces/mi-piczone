@@ -13,36 +13,34 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
                     <a href="#" class="nav-item nav-link text-white">HOME</a>
-                    <a href="" class="nav-item nav-link text-white">GALLERY</a>
+                    <a href="#gallery" class="nav-item nav-link text-white">GALLERY</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           CATEGORIES
                         </a>
+                        {% for category in categorys %}
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Food</a>
+                          <a class="dropdown-item" href="/category/{{category.id}}">{{category.name}}</a>
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Fashion</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Nature</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Travel</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Cars</a>
+                        {% empty %}
+                          <!-- <a class="dropdown-item" href="#">No categories</a> -->
                         </div>
-                      </div>
+                        {% endfor %}
+                    </div>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           LOCATIONS
                         </a>
+                        {% for location in locations %}
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">USA</a>
+                          <a class="dropdown-item" href="/location/{{location.id}}">{{location.name}}</a>
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">U.K</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Africa</a>
+                         {% empty %}
+                          <a class="dropdown-item" href="#">No locations found</a>
                         </div>
+                        {% endfor %}
                     </div>
-                    <a href="" class="nav-item nav-link text-white">CONTACT</a>
+                    
                 </div>
             </div>
             

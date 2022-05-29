@@ -29,8 +29,8 @@
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
             <div class="portfolio-wrap">
                 <div class="portfolio-wrap hover">
-                    <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;">
-                        <img src="{{image.pic_url}}" alt="" class="image">
+                    <a class="img-overlay" style="cursor: pointer;" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;">
+                        <img src="{{image.pic.url}}" alt="" class="image">
                         <div class="overlayed">
                             <h4>{{image.name}}</h4>
                         </div>
@@ -56,14 +56,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteModalLabel">Image</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <button class="close" style="cursor: pointer;" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-9 col-lg-9">
-                        <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic_url}}" alt="" id="img{{image.id}}" class="img-thumbnail" style="cursor: pointer;"></a>
+                        <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic.url}}" alt="" id="img{{image.id}}" class="img-thumbnail" style="cursor: pointer;"></a>
                     </div>
                     <div class="col-md-3">
                         <h4 class="desc">Location</h4>
@@ -79,7 +79,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-warning" type="button" onclick="copy('img{{image.id}}')">Copy Link</button>
-                <button class="btn btn-warning" type="button" data-dismiss="modal">Close</button>
+                <button class="btn btn-warning" type="button" data-dismiss="modal" style="cursor: pointer;">Close</button>
             </div>
         </div>
     </div>
