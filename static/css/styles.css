@@ -42,6 +42,10 @@ button.explore {
     text-align: center;
     width: 100%;
 }
+.opsy {
+    width: 30%;
+    margin: auto;
+}
 .wrap#gallery.portfolio-wrap {
     margin-top: 10%;
 }

@@ -35,14 +35,11 @@
          </div>
          {% empty %}
      </div>
-     <div class="row">
-         <div class="col-sm-6 col-md-6 col-lg-6">
-             <img src="{% static 'img/oops.png' %}" alt="" class="oops">
-         </div>
-         <div class="col-sm-6 col-md-6 col-lg-6">
-             <h2 class="text-center">Seems we cannot find any images for {{image.image_location.name}}</h2>
-         </div>
-     </div>
+     
+    <div class="opsy">
+        <img src="{% static 'img/oops.png' %}" alt="" class="oops" height="200px">
+        <h2 class="text-center">Seems we cannot find any images for {{image.image_location.name}}</h2>
+    </div>
      {% endfor %}
  
  <!-- Image details  -->
