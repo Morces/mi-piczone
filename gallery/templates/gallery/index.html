@@ -12,7 +12,7 @@
                 <h2>PICZONE GALLERY</h2>
                 <br>
                 <h5>If you are looking to explore the world, don't hold back. Welcome to my gallery, I travelled the world and I still am. I'm not done. Join me for adventures.</h3>
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="{% url 'search_image' %}">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                 </form>
@@ -25,12 +25,15 @@
 
 <div class="container wrap">
     <div class="row" id="gallery">
+        <div class="card-header">
+            <h3>GALLERY</h3>
+        </div>
         {% for image in images %}
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
             <div class="portfolio-wrap">
                 <div class="portfolio-wrap hover">
-                    <a class="img-overlay" style="cursor: pointer;" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;">
-                        <img src="{{image.pic.url}}" alt="" class="image">
+                    <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;cursor: pointer;">
+                        <img src="{{image.pic.url}}" alt="" class="image" height="250px">
                         <div class="overlayed">
                             <h4>{{image.name}}</h4>
                         </div>

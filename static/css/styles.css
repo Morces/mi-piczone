@@ -38,6 +38,10 @@ button.explore {
     margin-bottom: 3%;
   
 }
+.oops{
+    text-align: center;
+    width: 100%;
+}
 .wrap#gallery.portfolio-wrap {
     margin-top: 10%;
 }
@@ -65,7 +69,7 @@ button.explore {
     position: relative;
     text-align: center;
 }
- /* .hover .overlayed {
+ .hover .overlayed {
     position: absolute;
     overflow: hidden;
     width: 80%;
@@ -79,7 +83,7 @@ button.explore {
     -webkit-transform: scale(0,1);
     -ms-transform: scale(0,1);
     transform: scale(0,1);
-} */
+}
 
 .hover:hover .overlayed {
     opacity: 1;
@@ -87,6 +91,13 @@ button.explore {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
+}
+.hover img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    margin-bottom: 7px;
 }
 
 .hover:hover img {
@@ -109,11 +120,10 @@ h2,p.desc {
 	text-transform: uppercase;
     text-align: center;
     position: relative;
-    font-size: 15px;
+    font-size: 10px;
     background-color: transparent;
     color: #ffffff;
-    /* margin-top: 2em; */
-    padding: 2em 2em;
+    padding-top: 10em ;
     opacity: 1;
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -122,22 +132,25 @@ h2,p.desc {
     transform: translate3d(0,-100%,0);
     letter-spacing: 2px;
 }
-/*
-.hover p{
-	color: #FFF;
-    line-height: 1.8em;
-	opacity: 0;
-	filter: alpha(opacity=0);
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,100%,0);
-	transform: translate3d(0,100%,0);
-}
-
- */
+.hover:hover h4 {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+} 
 .modal.fade {
     width: 50%; 
     margin:auto;
-    height: 70vh;
+    height: 95vh;
     background-color: rgb(255, 255, 255);
+}
+.card-header{
+    background-color: #ffffff;
+    border-radius: 0;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
 }
