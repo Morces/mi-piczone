@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+
+<div class="banner-1">
+    <div class="cover-1">
+        <h2>{{Location.name}} Photos</h2>
+        <div class="container imageloc">
+            <i class="bi bi-camera" style="font-size: 40px;"></i>
+            <h2>PICZONE GALLERY</h2>
+            <form class="form-inline my-2 my-lg-0" role="search" action="">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Displaying Related Images  -->
+<div class="container wrap">
+   <!-- Looping through the images  -->
+    <div class="row">
+        {% for image in images %}
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="portfolio-wrap">
+                <div class="portfolio-wrap hover">
+                    <a href="" class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;">
+                        <img src="{{image.pic_url}}" class="image" alt="">
+                        <div class="overlayed">
+                            <h4>
+                                {{image.name}}
+                            </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <img src="{% static 'img/oops.png' %}" alt="" class="oops">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <h2 class="text-center">Seems we cannot find any images for {{image.image_location.name}}</h2>
+        </div>
+    </div>
+    {% endfor %}
+
+<!-- Image details  -->
+{% for image in images %}
+<div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Image</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-9 col-lg-9">
+                    <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic_url}}" alt="" id="img{{image.id}}" class="img-thumbnail" style="cursor: pointer;"></a>
+                </div>
+                <div class="col-md-3">
+                    <h4>Location</h4>
+                    <p>{{image.image_location.name}}</p>
+                    <h4>Category</h4>
+                    <p>{{image.image_category.name}}</p>
+                </div>
+                <div>
+                    <h2 class="desc">{{image.name}}</h2>
+                    <p class="desc">{{image.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" onclick="copy('img{{image.id}}')">Copy Link</button>
+            <button class="btn btn-warning" type="button" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}
+
+
