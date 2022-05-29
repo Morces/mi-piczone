@@ -1,7 +1,8 @@
+from email import message
 from django.http import Http404
 from django.shortcuts import render
 
-from gallery.models import Image, Location
+from gallery.models import Category, Image, Location
 
 
 
@@ -30,3 +31,18 @@ def location_filter(request, image_location):
     images = Image.filter_by_location(image_location)
     title = f'{location} Photos'
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})
+
+def search_image(request):
+    title = 'Search Images'
+    categories  = Category.objects.all()
+    locations = Location.objects.all()
+
+    if 'image_category' in request.GET and request.GET['image_category']:
+        search_term = request.GET.get('image_category')
+        found_results = Image.search_by_category(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search-results.html', {'title':title, 'images':found_results, 'message':message, 'categories':categories, 'locations':locations})
+    else:
+        message='You have not searched anything yet'
+        return render(request, 'search-results.html', {'message':message})
