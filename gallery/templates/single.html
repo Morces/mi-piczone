@@ -1,0 +1,83 @@
+{% extends 'base.htmll' %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+
+<!-- Landing -->
+<div class="banner-1">
+    <div class="cover-1">
+        <h2>{{image.image_category.name}} Category</h2>
+        <div class="container imageloc">
+            <i class="bi bi-camera" style="font-size: 40px;"></i>
+            <h2>PICZONE GALLERY</h2>
+            <form class="form-inline my-2 my-lg-0" role="search" action="">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Displaying Images -->
+<div class="container wrap">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="portfolio-wrap">
+                <a data-toggle="modal" data-target="#{{image.id}}" class="img-overlay" style="width: 100%;">
+                    <img src="{{image.picture.cdn_url}}" class="image" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>{{image.name}}</h4>
+            <p class="text-muted">{{image.image_category}} | {{image.image_location}}</p>
+            <p>{{iamge.description}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Displaying Related Images  -->
+<div class="container-fluid wrap">
+    <h4 class="text-center">View Related Images</h4>
+    <hr>
+    <!-- Looping through the images  -->
+    <div class="row">
+        {% for image in image_category %}
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="portfolio-wrap">
+                <div class="portfolio-wrap hover">
+                    <a href="" class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width: 100%;">
+                        <img src="{{image.picture_cdn_url}}" class="image" alt="">
+                        <div class="overlayed">
+                            <h4>
+                                <a href="/img/{{image.image_category.name}}/{{image.id}}">
+                                    {{image.name}}
+                                </a>
+                            </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <img src="" alt="">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <h2 class="text-center">Seems we cannot find any related images!!</h2>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

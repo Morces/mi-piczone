@@ -38,3 +38,17 @@ button.explore {
     margin-bottom: 3%;
   
 }
+.wrap#gallery.portfolio-wrap {
+    margin-top: 10%;
+}
+.container.image{
+    padding: 6em 0 0;
+}
+.container.imageloc{
+    padding: 4em 0 0;
+}
+.banner-1 h2{
+    text-align: center;
+    padding-top: 40px;
+    color: #c3c3c3;
+}
