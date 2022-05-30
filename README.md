@@ -60,7 +60,7 @@ Pull Requests are welcomed
 Reach me through email [karanim594@gmail.com]
 
 ## License
-[MIT license](https://github.com/Morces/mi-piczone/master/LICENSE)
+[MIT license](https://github.com/Morces/mi-piczone/blob/master/LICENSE)
 
 
 
