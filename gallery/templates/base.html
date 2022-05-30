@@ -32,23 +32,51 @@
 
         {% block scripts %}
         <script>
-            function copy(ids) {
-                var textCopied = document.getElementById(ids);
-                text = textCopied.src;
-                var elementary = document.createElement('input');
-                document.body.appendChild(elementary);
-                elementary.setAttribute('value', text);
-                elementary.select();
-                document.execCommand('copy');
-                document.body.removeChild(elementary);
-                alert('Select this link:' + textCopied.src);
-        }
-        function myFunction() {
-            var copyText = document.getElementById("link");
-            copyText.select();
-            document.execCommand("Copy");
-            alert("Copied the text: " + copyText.value);
-        }
+        //     function copy(ids) {
+        //         var textCopied = document.getElementById(ids);
+        //         text = textCopied.src;
+        //         var elementary = document.createElement('input');
+        //         document.body.appendChild(elementary);
+        //         elementary.setAttribute('value', text);
+        //         elementary.select();
+        //         document.execCommand('copy');
+        //         document.body.removeChild(elementary);
+        //         alert('Select this link:' + textCopied.src);
+        // }
+        //     function myFunction() {
+        //         var copyText = document.getElementById("link");
+        //         copyText.select();
+        //         document.execCommand("Copy");
+        //         alert("Copied the text: " + copyText.value);
+        //     }
+
+
+
+            // const copyButton = document.getElementById('copy-btn')
+            // copyButton.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     const img = document.getElementsByClassName("img-thumbnail");
+            //         navigator.clipboard.read().then((data) => {
+            //         for (let i = 0; i < data.length; i++) {
+            //             if (!data[i].types.includes("image/jpg")) {
+            //             // Clipboard does not contain image data
+            //             } else {
+            //             data[i].getType("image/jpg").then((blob) => {
+            //                 img.src = URL.createObjectURL(blob);
+            //             });
+            //             }
+            //         }
+            //     });
+            // })
+        
+
+
+
+
+
+
+
+
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
