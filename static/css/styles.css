@@ -158,3 +158,6 @@ h2,p.desc {
     align-items: center;
     margin-bottom: 3%;
 }
+.modal-footer button {
+    cursor: pointer;
+}

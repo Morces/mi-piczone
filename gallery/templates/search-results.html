@@ -9,7 +9,7 @@
         {% if images %}
         <h2>Found {{images | length }} images for {{message}}</h2>
         {% else %}
-        <h2>Found 0 results for {{message}}</h2>
+        <h2>Found 0 results</h2>
         {% endif %}
 
     </div>
@@ -17,6 +17,7 @@
 
 <div class="container wrap">
     <!-- Looping through the images  -->
+    {% if images %}
      <div class="row">
          {% for image in images %}
          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
@@ -28,19 +29,21 @@
                              <h4>
                                  {{image.name}}
                              </h4>
+                             <p>{{image.image_category.name}}</p>
                          </div>
                      </a>
                  </div>
              </div>
          </div>
-         {% empty %}
+         <!-- {% empty %} -->
      </div>
      
-    <div class="opsy">
+    <!-- <div class="opsy">
         <img src="{% static 'img/oops.png' %}" alt="" class="oops" height="200px">
         <h2 class="text-center">Seems we cannot find any images for {{image.image_location.name}}</h2>
-    </div>
+    </div> -->
      {% endfor %}
+     {% endif %}
  
  <!-- Image details  -->
  {% for image in images %}

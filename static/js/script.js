@@ -17,6 +17,7 @@ $(document).ready(function () {
     toggleNavbarMethod();
     $(window).resize(toggleNavbarMethod);
 });
+
 })(jQuery);
 
 

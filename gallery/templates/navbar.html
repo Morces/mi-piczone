@@ -3,7 +3,7 @@
 <div class="container-fluid nav-bar p-0 home">
     <div class="container-lg p-0">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="#" class="navbar-brand">
+            <a href="{% url 'index' %}" class="navbar-brand">
                 <!-- <img src="{% static 'img/logo.png' %}" alt="" height=""> -->
                 <i class="bi bi-camera-fill" style="color: blue;"></i><span class="text-white"> PICZONE</span>
             </a>
@@ -12,16 +12,16 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="#" class="nav-item nav-link text-white">HOME</a>
+                    <a href="{% url 'index' %}" class="nav-item nav-link text-white">HOME</a>
                     <a href="#gallery" class="nav-item nav-link text-white">GALLERY</a>
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-item ">
+                        <a class="nav-link  text-white" href="#gallery">
                           CATEGORIES
                         </a>
                         {% for category in categorys %}
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="/category/{{category.id}}">{{category.name}}</a>
-                          <div class="dropdown-divider"></div>
+                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+                          <a  href="/category/{{category.name}}">{{category.name}}</a>
+                          <!-- <div class="dropdown-divider"></div> -->
                         {% empty %}
                           <!-- <a class="dropdown-item" href="#">No categories</a> -->
                         </div>
